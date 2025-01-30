@@ -9,4 +9,26 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Product()
+    {
+        return Redirect("/product");
+    }
+    public IActionResult Customer()
+    {
+        return Redirect("/customer");
+    }
+    public IActionResult Employee()
+    {
+        return Redirect("/employee");
+    }
+    public IActionResult Order()
+    {
+        return Redirect("/order");
+    }
+    public IActionResult Supplier()
+    {
+        return Redirect("/Supplier");
+    }
+
+
 }

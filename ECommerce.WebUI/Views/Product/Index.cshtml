@@ -1,5 +1,11 @@
 ﻿@model ProductListViewModel
 
+@section CategorySection {
+    <div class="col-md-2">
+        @await Component.InvokeAsync("CategoryList")
+    </div>
+}
+
 <p>
     <a class="btn btn-outline-primary">Create New</a>
 </p>
@@ -8,11 +14,11 @@
     <thead>
         <tr>
             <th>Product Name</th>
-            <th>UnitPrice</th>
-            <th>UnitInStock</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+            <th>Action</th>
         </tr>
     </thead>
-
     <tbody>
         @foreach (var item in Model.Products)
         {
@@ -21,12 +27,12 @@
                 <td>@item.UnitPrice</td>
                 <td>@item.UnitsInStock</td>
                 <td>
-                    <a class="btn btn-xs btn-success">Add To Card</a>
+                    <a class="btn btn-xs btn-success">Add To Cart</a>
                 </td>
             </tr>
         }
     </tbody>
-</table>    
+</table>
 
 <product-list-pager current-page="@Model.CurrentPage"
                     current-category="@Model.CurrentCategory"

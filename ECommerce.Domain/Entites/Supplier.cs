@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ECommerce.Domain.Abstract;
+using System;
 using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entites;
 
-public partial class Supplier
+public partial class Supplier : IEntity
 {
     public int SupplierId { get; set; }
 

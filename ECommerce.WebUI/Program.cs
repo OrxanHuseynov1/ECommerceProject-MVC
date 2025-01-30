@@ -24,6 +24,12 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IEmployeeDal, EfEmployeeDal>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
+builder.Services.AddScoped<IOrderDal, EfOrderDal>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+builder.Services.AddScoped<ISupplierDal, EfSupplierDal>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+
 #endregion
 
 #region Database registration

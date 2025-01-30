@@ -1,0 +1,11 @@
+﻿@model OrderListViewModel
+
+
+@* <section>
+    @foreach (var item in Model.ShipCountries)
+    {
+        var css = "list-group-item";
+        if (item.ShipCountry == Model.CurrentCountry) { css += "active"; }
+        <a style="cursor:pointer;" href="/product/index?orderId=@item.OrderId" class=@css>@item.ShipName</a>
+    }
+</section> *@

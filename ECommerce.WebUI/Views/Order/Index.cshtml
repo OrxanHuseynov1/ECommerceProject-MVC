@@ -1,0 +1,37 @@
+﻿@model OrderListViewModel
+
+
+@* @section CountrySection {
+    <div class="col-md-2">
+        @await Component.InvokeAsync("ShipCountryList")
+    </div>
+} *@
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ship Name</th>
+            <th>Ship Name</th>
+            <th>Ship Country</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>@item.ShipName</td>
+                <td>@item.ShipAddress</td>
+                <td>@item.ShipCountry</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<product-list-pager current-page="@Model.CurrentPage"
+                    page-count="@Model.PageCount"
+                    page-size="@Model.PageSize"
+                    current-type="@Model.GetType().Name">
+</product-list-pager>
