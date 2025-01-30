@@ -1,0 +1,30 @@
+﻿@model EmployeeListViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Employees)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Title</td>
+                <td>@item.BirthDate?.ToString("MMMM dd, yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<product-list-pager current-page="@Model.CurrentPage"
+                    page-count="@Model.PageCount"
+                    page-size="@Model.PageSize"
+                    current-type="@Model.GetType().Name">
+</product-list-pager>

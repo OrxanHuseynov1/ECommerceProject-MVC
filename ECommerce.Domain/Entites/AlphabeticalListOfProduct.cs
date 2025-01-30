@@ -1,10 +1,9 @@
-﻿using ECommerce.Domain.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace ECommerce.Domain.Entites;
 
-public partial class Product: IEntity
+public partial class AlphabeticalListOfProduct
 {
     public int ProductId { get; set; }
 
@@ -26,9 +25,5 @@ public partial class Product: IEntity
 
     public bool Discontinued { get; set; }
 
-    public virtual Category? Category { get; set; }
-
-    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
-
-    public virtual Supplier? Supplier { get; set; }
+    public string CategoryName { get; set; } = null!;
 }

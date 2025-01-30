@@ -1,0 +1,28 @@
+﻿@model CustomerListViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Contact Name</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Customers)
+        {
+            <tr>
+                <td>@item.CompanyName</td>
+                <td>@item.ContactName</td>
+                <td>@item.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<product-list-pager current-page="@Model.CurrentPage"
+                    page-count="@Model.PageCount"
+                    page-size="@Model.PageSize"
+                    current-type="@Model.GetType().Name">
+</product-list-pager>
